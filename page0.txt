@@ -1,0 +1,172 @@
+URUSNIAGA AKAUN/
+URUSNIAGA AKAUN/ 戶口進支項
+戶口進支項 /ACCOUNT TRANSACTIONS
+/ACCOUNT TRANSACTIONS
+TARIKH MASUK
+TARIKH MASUK
+BUTIR URUSNIAGA
+BUTIR URUSNIAGA
+JUMLAH URUSNIAGA
+JUMLAH URUSNIAGA
+BAKI PENYATA
+BAKI PENYATA
+進支日期
+進支項說明
+银碼
+結單存餘
+ENTRY DATE
+ENTRY DATE
+TRANSACTION DESCRIPTION
+TRANSACTION DESCRIPTION
+TRANSACTION AMOUNT
+TRANSACTION AMOUNT
+STATEMENT BALANCE
+STATEMENT BALANCE
+BEGINNING BALANCE
+1,298.61
+04/10/18
+CASH WITHDRAWAL
+101.00-
+1,197.61
+05/10/18
+CASH WITHDRAWAL
+150.00-
+1,047.61
+07/10/18
+PYMT FROM A/C
+16.00-
+1,031.61
+   GOLDEN SCREEN CINEM*
+   22118100764234
+07/10/18
+FPX PAYMENT FR A/
+45.81-
+985.80
+   55727138           *
+   CELCOM PLANET SDN BH
+   1810071908390212
+07/10/18
+PAYMENT VIA MYDEBIT
+13.80-
+972.00
+   GSC-BERJAYA TIMES S*
+   KUALA LUMPUR
+   PAYMENT VIA MYDEBIT
+07/10/18
+FPX PAYMENT FR A/
+20.00-
+952.00
+   55761857           *
+   GPAY NETWORK (M) SDN
+   1810072352040565
+08/10/18
+CASH WITHDRAWAL
+101.00-
+851.00
+11/10/18
+CASH WITHDRAWAL
+800.00-
+51.00
+14/10/18
+SALE DEBIT
+11.55-
+39.45
+15/10/18
+SALE DEBIT
+13.60-
+25.85
+15/10/18
+PAYMENT VIA MYDEBIT
+18.00-
+7.85
+   JUAN VALDEZ CAFE-AV*
+   KUALA LUMPUR
+   PAYMENT VIA MYDEBIT
+16/10/18
+REFUND SALE
+4.00+
+11.85
+16/10/18
+SALE DEBIT
+4.00-
+7.85
+20/10/18
+FUND TRANSFER TO A/
+272.74+
+280.59
+20/10/18
+CASH WITHDRAWAL
+200.00-
+80.59
+23/10/18
+FPX PAYMENT FR A/
+22.00-
+58.59
+   57527368           *
+   CELCOM PLANET SDN BH
+   1810231236220350
+25/10/18
+SVG GIRO CR
+9,854.00+
+9,912.59
+   MEASAT BROADCAST NET
+   00000000000001748182
+   Measat Broadcast Net
+25/10/18
+FOREIGN TT DR
+8,110.00-
+1,802.59
+   APEX/MUHAMMED IRSHAD
+   MTUT2510TCH007
+Maybank Islamic Berhad (787435-M)
+Maybank Islamic Berhad (787435-M)
+15th Floor, Tower A, Dataran Maybank, 1, Jalan Maarof, 59000 Kuala Lumpur
+15th Floor, Tower A, Dataran Maybank, 1, Jalan Maarof, 59000 Kuala Lumpur
+000001
+IBS TECHNOLOGY PARK MALAYSIA
+MUHAMMED IRSHAD EDAVANNA KALLINGAL
+A-21-7
+VISTA KOMANWEL
+BUKIT JALIL
+57000 KL WP
+MUKA/
+MUKA/ 頁 /PAGE
+/PAGE
+:
+1
+TARIKH PENYATA
+TARIKH PENYATA
+結單日期
+STATEMENT DATE
+STATEMENT DATE
+:
+31/12/18
+NOMBOR AKAUN
+NOMBOR AKAUN
+戶號
+ACCOUNT
+ACCOUNT
+NUMBER
+NUMBER
+:
+164418-086731
+ELIGIBLE FOR PROTECTION BY PIDM
+SAVINGS ACCOUNT-I
+Perhation / Note
+Perhation / Note
+(1)
+(1)
+Semua maklumat dan baki yang dinyatakan di sini akan dianggap betul melainkan Bank telah dimaklumkan secara bertulis tentang sebarang ketidaktepatan dalam
+Semua maklumat dan baki yang dinyatakan di sini akan dianggap betul melainkan Bank telah dimaklumkan secara bertulis tentang sebarang ketidaktepatan dalam
+tempoh 21 hari.
+tempoh 21 hari.
+若银行在21天内未获得书面通知于任何差异，所有显示的账项及余额将被视为正确。
+All items and balances shown will be considered correct unless the Bank is notified in writing of any discrepancies within 21 days.
+All items and balances shown will be considered correct unless the Bank is notified in writing of any discrepancies within 21 days.
+(2)
+(2)
+Sila beritahu kami sebarang pertukaran alamat secara bertulis.
+Sila beritahu kami sebarang pertukaran alamat secara bertulis.
+請通知本行在何地址更换。
+Please notify us of any change of address in writing.
+Please notify us of any change of address in writing.
