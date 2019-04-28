@@ -1,24 +1,10 @@
 import fitz
 import re
 import sys, json
-from maybanksavingsstmt import MaybankSavingsStmt
+from maybank.maybanksavingsstmt import MaybankSavingsStmt
 from operator import itemgetter
 
-beginning_balance = 'BEGINNING BALANCE'
-
 doc = fitz.open('statement.pdf')
-
-content = ""
-
-for page in doc:
-    pageContent=page.getText()
-    pageContent =re.sub(r"^URUSNIAGA.*[\s\S+]+STATEMENT BALANCE",'',pageContent)
-    pageContent = re.sub(r"Maybank Islamic Berhad.*[\s\S+]+Please notify us of any change of address in writing.",'',pageContent)
-    content+=pageContent
-
-print(content)
-
-
 
 # f=open("page0.txt","w+")
 # f.write(content)
@@ -26,11 +12,14 @@ print(content)
 # Maybank statements:
 
 
-maybankstmt = MaybankSavingsStmt(content)
+maybankstmt = MaybankSavingsStmt(doc)
 openingBalance = maybankstmt.getOpeningBalance()
 print('opening balance: ',openingBalance)
 
-maybankstmt.findInflows()
+debits = maybankstmt.findOutflows()
+credits = maybankstmt.findInflows()
+
+
 
 
 
