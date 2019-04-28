@@ -34,8 +34,8 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
         regex = r'^((\d){1,3},*){1,5}\.(\d){2}(\+|-)$'
         if re.match(regex, str):
             if(str[-1]=='+'):
-                return False
-            return True
+                return True
+            return False
         return False
 
     def __findNextDateIndexPattern(self,i, contents):
@@ -66,7 +66,7 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
 
 
         for _ in range(len(contents)-2):
-            desc+=contents[_]
+            desc+=contents[_].replace('   ','')+' '
 
         if self.isDebit(contents[-2]): 
             return Debit(amount,desc, date)
@@ -97,10 +97,10 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
 
 
     def findInflows(self):
-        return self.grabTransactions("credits")
+        return self.grabTransactions("debits")
 
     def findOutflows(self):
-       return self.grabTransactions("debits")
+       return self.grabTransactions("credits")
 
 
     def getOpeningBalance(self):
