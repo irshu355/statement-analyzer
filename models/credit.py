@@ -7,4 +7,14 @@ class Credit:
         self.desc = desc
         self.date = date
 
+
+    def to_dict(self):
+        return {
+        'amount': self.amount,
+        'date': self.date,
+        'desc': self.desc
+    }
+
+
+
     

@@ -4,9 +4,10 @@ from abstsavingsanalyzer import AbstStmtSavingsAnalyzer
 from models.debit import *
 from models.credit import *
 from decimal import Decimal
+import pandas
 
 class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
-    regexddMMyyyy= r"^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$"
+    REGEXDDMMYYYY= r"^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$"
     #
     # normalize text to remove unwanted texts
     #
@@ -20,7 +21,7 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
             content+=pageContent
         self.pdfContent = content
     
-        
+    
     def matchesAmount(self, str):
         #1.00, 100.00, 1,000.00, 10,000.00 1,000,000.00
         regex = r'^((\d){1,3},*){1,5}\.(\d){2}(\+|-)$'
@@ -30,7 +31,6 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
         return False
 
     def isDebit(self, str):
-        #1.00, 100.00, 1,000.00, 10,000.00 1,000,000.00
         regex = r'^((\d){1,3},*){1,5}\.(\d){2}(\+|-)$'
         if re.match(regex, str):
             if(str[-1]=='+'):
@@ -44,7 +44,7 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
         while j < len(contents):
             contents[j] =contents[j].strip()
             date = contents[j]
-            if re.match(self.regexddMMyyyy,contents[j]) or re.match(r"^ending balance*",contents[j],flags=re.IGNORECASE):
+            if re.match(self.REGEXDDMMYYYY,contents[j]) or re.match(r"^ending balance*",contents[j],flags=re.IGNORECASE):
                 break
             j+=1
         contents = contents[:j]
@@ -88,7 +88,7 @@ class MaybankSavingsStmt(AbstStmtSavingsAnalyzer):
         i = 0
         trans = []
         while i < len(contents):
-            if re.match(self.regexddMMyyyy,contents[i]):
+            if re.match(self.REGEXDDMMYYYY,contents[i]):
                 debit = self.__findNextDateIndexPattern(i,contents)
                 if isinstance(debit, Debit if type == 'debits' else Credit):
                     trans.append(debit)
