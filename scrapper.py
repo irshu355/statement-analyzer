@@ -5,8 +5,10 @@ from urllib.parse import urlencode, urlparse, parse_qs
 from bs4 import BeautifulSoup
 from lxml.html import fromstring
 from requests import get
+import string
 import os.path
 import csv
+from nltk.corpus import stopwords
 class Scrapper():
     def __init__(self):
         self.api_key = 'AIzaSyDDO4EvyHPHHHkM9By6gDef4M23o73ztSQ'
@@ -14,25 +16,24 @@ class Scrapper():
         self.url = 'https://www.googleapis.com/customsearch/v1'
 
     def query(self,q):
+        #using google search api
+        # params = dict(
+        #     key=self.api_key,
+        #     cx=self.cx,
+        #     q=q
+        # )
 
-        params = dict(
-            key=self.api_key,
-            cx=self.cx,
-            q=q
-        )
+        # r = requests.get(self.url, params=params)
+        # json = r.json()
 
-        # raw = get("https://www.google.com/search?q=StackOverflow").text
-        # page = fromstring(raw)
+        # items =  json["items"]
+        # matches = [x for x in items if not 'mime' in x]
+        # self.scrap(matches[0]["link"],q)
 
-        # for result in page.cssselect(".r a"):
-        #     url = result.get("href")
-        #     if url.startswith("/url?"):
-        #         url = parse_qs(urlparse(url).query)['q']
-        #     print(url[0])
-
-        escaped_search_term = q.replace(' ', '+')
+        #uncomment for using google url scrapping
+        escaped_search_term ='+'.join(q.split())
         USER_AGENT = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
-        google_url = 'https://www.google.com/search?q={}&num={}&hl={}'.format(escaped_search_term, 10, 'en')
+        google_url = 'https://www.google.com.my/search?q={}&num={}&hl={}'.format(escaped_search_term, 10, 'en')
         response = requests.get(google_url, headers=USER_AGENT)
         response.raise_for_status()
  
@@ -56,19 +57,20 @@ class Scrapper():
                 if link != '#':
                     found_results.append({'keyword': keyword, 'rank': rank, 'title': title, 'description': description})
                     rank += 1
-        self.writeToDs(found_results[0].get('title'),found_results[0].get('description'),keyword)   
+        self.writeToDs(found_results[0].get('title'),found_results[0].get('description'),keyword)
        
     def writeToDs(self, title, desc, keyword):
         mode = 'w'
         fname = 'dataset.csv'
         if os.path.isfile(fname):
             mode = 'a'
-            
 
         with open(fname, mode = mode) as spendings_file:
             scrap_writer = csv.writer(spendings_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            scrap_writer.writerow([keyword, title + ' ' + desc])
-
+            if not desc:
+                desc = 'couldnt scrap desc'
+            line = title + ' ' + desc
+            scrap_writer.writerow([keyword, line])
 
     def scrap(self, req_url, keyword):
 

@@ -10,3 +10,4 @@ class category(Enum):
     travel_tourism = 6
     shopping = 7
     uncategorised = 8
+

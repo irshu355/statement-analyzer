@@ -42,4 +42,3 @@ global food_dining_patterns
 food_dining_patterns = [
             '.*cafe.*'
         ]
-    
