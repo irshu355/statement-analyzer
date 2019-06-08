@@ -5,3 +5,8 @@ class Bank(Enum):
     my_rhb = 3
     my_hdfc = 4
     my_hongleong = 5
+
+class Countries(Enum):
+    malaysia = 1
+    singapore = 2
+    thailand = 3

@@ -1,7 +1,8 @@
 import globals
-from banks import Bank
+from enums import Bank
+from enums import Countries
 from enum import Enum
-class BankPatterns():
+class StatementPatterns():
     def __init__(self, bank):
         self.bank = bank
         pass
@@ -13,13 +14,20 @@ class BankPatterns():
 
     def getUncategorizedPatterns(self):
         return{
-           Bank.my_maybank: ['.*withdrawal.*','.*transfer a/c.*','.*account transfer.*','^transfer.*','^ibk.*'] 
+           Bank.my_maybank: ['.*withdrawal.*',
+           r'.*transfer\s.*',
+            r'.*foreign\s.*',
+           r'.*account transfer.*',
+           r'^transfer.*','^ibk.*',
+           r'.*pre(-|\s)?auth debit.*',
+           r'.*atm card charges.*'
+           ] 
         }.get(self.bank, Bank.my_maybank)
 
 
     def getUtilitiesPatterns(self):
         return{
-           Bank.my_maybank: ['.*umobile.*','.*digi.*','.*maxis.*'] 
+           Bank.my_maybank: ['.*umobile.*','.*digi.*','.*maxis.*']
         }.get(self.bank, Bank.my_maybank)
 
     def getStopWords(self):
@@ -28,6 +36,14 @@ class BankPatterns():
         }.get(self.bank, Bank.my_maybank)
     def getGlobalStopWords(self):
         return ['pymt from','pa?ym(en)?t','pymt','via']
+
+
+    @staticmethod
+    def getStates(country):
+        return{
+           Countries.malaysia: ['kuala lumpur','perlis','kedah','penang','perak','selangor','putrajaya','negeri sembilan','melaka',
+           'johor','pahang','kelantan','terengganu','sabah','sarawak','labuan'] 
+        }.get(country, Countries.malaysia)
 
     
     
